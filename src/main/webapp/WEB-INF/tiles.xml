@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">  
+<tiles-definitions>  
+    <definition name="base.definition"  
+                template="/WEB-INF/jsp/layout/home-layout.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/jsp/include/header.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/jsp/include/footer.jsp" />  
+    </definition>  
+  
+    <definition name="home" extends="base.definition">  
+        <put-attribute name="title" value="Thuvien.vn" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/home.jsp" />  
+    </definition>  
+  
+    <definition name="login" extends="base.definition">  
+        <put-attribute name="title" value="login form" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/login.jsp" />  
+    </definition>  
+     <definition name="profile" extends="base.definition">  
+        <put-attribute name="title" value="profile " />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/profile.jsp" />  
+    </definition>
+    <definition name="product" extends="base.definition">  
+        <put-attribute name="title" value="show product" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/product.jsp" />  
+    </definition>  
+    <definition name="detail" extends="base.definition">  
+        <put-attribute name="title" value="show detail" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/detail.jsp" />  
+    </definition>  
+    <definition name="cart" extends="base.definition">  
+        <put-attribute name="title" value="show cart" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/cart.jsp" />  
+    </definition>  
+    <definition name="order" extends="base.definition">  
+        <put-attribute name="title" value="show order" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/order.jsp" />  
+    </definition>  
+    <definition name="signup" extends="base.definition">  
+        <put-attribute name="title" value="sign up" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/signup.jsp" />  
+    </definition>  
+    
+    <definition name="checksignup" extends="base.definition">  
+        <put-attribute name="title" value="sign up" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/checksignup.jsp" />  
+    </definition>  
+    
+    <!--    admin-->
+    <definition name="base.admin"  
+                template="/WEB-INF/jsp/layout/admin-layout.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/jsp/include/admin-header.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/jsp/include/admin-footer.jsp" />  
+    </definition>  
+    
+    <definition name="adminhome" extends="base.admin">  
+        <put-attribute name="title" value="Thuvien.vn" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-home.jsp" />  
+    </definition> 
+    <!--danh muc-->
+    <definition name="admincategory" extends="base.admin">  
+        <put-attribute name="title" value="Danh Muc" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-category.jsp" />  
+    </definition> 
+    <definition name="adminaddcategory" extends="base.admin">  
+        <put-attribute name="title" value="Danh Muc Edit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-category-add-edit.jsp" />  
+    </definition>
+    <!--book-->
+     <definition name="adminbook" extends="base.admin">  
+        <put-attribute name="title" value="BOOK" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-book.jsp" />  
+    </definition> 
+    <definition name="adminaddbook" extends="base.admin">  
+        <put-attribute name="title" value="Danh Muc Edit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-book-add-edit.jsp" />  
+    </definition>
+    <!--nhan vien-->
+    <definition name="adminnhanvien" extends="base.admin">  
+        <put-attribute name="title" value="Nhan Vien" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-nhanvien.jsp" />  
+    </definition> 
+    <!--tac gia-->
+    <definition name="adminauthor" extends="base.admin">  
+        <put-attribute name="title" value="Tac Gia" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-author.jsp" />  
+    </definition> 
+    <definition name="adminaddauthor" extends="base.admin">  
+        <put-attribute name="title" value="Tac Gia Edit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-author-add-edit.jsp" />  
+    </definition>
+    <!--Nha xuat ban-->
+    <definition name="adminpublishingcompany" extends="base.admin">  
+        <put-attribute name="title" value="Nha Xuat Ban" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-publishingcompany.jsp" />  
+    </definition>
+    <definition name="adminaddpublishingcompany" extends="base.admin">  
+        <put-attribute name="title" value="nhaxuatbanedit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-publishingcompany-add-edit.jsp" />  
+    </definition>
+    
+    <!--Noi luu tru-->
+    <definition name="adminstorage" extends="base.admin">  
+        <put-attribute name="title" value="Noi Luu Tru" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-storage.jsp" />  
+    </definition>
+    <definition name="adminaddstorage" extends="base.admin">  
+        <put-attribute name="title" value="Noi Luu Tru Edit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-storage-add-edit.jsp" />  
+    </definition>
+    <!--///-->
+    <definition name="admincheckout" extends="base.admin">  
+        <put-attribute name="title" value="checkout" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-checkout.jsp" />  
+    </definition>
+    <!--Sach-->
+    <definition name="adminsach" extends="base.admin">  
+        <put-attribute name="title" value="sach" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-sach.jsp" />  
+    </definition>
+    <definition name="adminsachedit" extends="base.admin">  
+        <put-attribute name="title" value="sachedit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-sach-add-edit.jsp" />  
+    </definition>
+    
+    <!--Ban Doc-->
+    <definition name="adminbandoc" extends="base.admin">  
+        <put-attribute name="title" value="bandoc" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-bandoc.jsp" />  
+    </definition>
+    <definition name="adminbandocedit" extends="base.admin">  
+        <put-attribute name="title" value="bandocedit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-bandoc-add-edit.jsp" />  
+    </definition>
+</tiles-definitions>  
