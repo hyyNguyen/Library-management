@@ -36,6 +36,7 @@ public class AuthorService {
         Author author = authorRepository.findOne(id);
         return  author;
     }
+    
      public Author editauthor(Author author){
         
         try {

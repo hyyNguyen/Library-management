@@ -19,7 +19,7 @@ public class StorageService {
     @Autowired
             StorageRepository storageRepository;
     
-    public Storage addAuthor(Storage storage){
+    public Storage addStorage(Storage storage){
         
         try {
             storage = storageRepository.save(storage);
@@ -28,5 +28,25 @@ public class StorageService {
             return null;
         }
         return storage;
+    }
+    //EDIT storage
+    public Storage getStorageId(int id) {
+        Storage storage = storageRepository.findOne(id);
+        return  storage;
+    }
+    //update storage
+    public Storage editStorage(Storage storage){
+        
+        try {
+            storage = storageRepository.save(storage);
+        } catch (Exception e) {
+            e.getMessage();
+            return null;
+        }
+        return storage;
+    }
+    //delete
+    public void deleteStorage(int id){
+        storageRepository.delete(id);
     }
 }

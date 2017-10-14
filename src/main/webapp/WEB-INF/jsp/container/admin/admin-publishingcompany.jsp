@@ -13,7 +13,7 @@
                     <a>Tables</a>
                 </li>
                 <li class="active">
-                    <strong>Tác Giả</strong>
+                    <strong>Nhà Xuất Bản</strong>
                 </li>
             </ol>
         </div>
@@ -60,9 +60,9 @@
                                         <td>${publishingcompany.idPublishingcompany}</td>
                                         <td>${publishingcompany.namePublishingcompany}</td>
                                         <td>
-                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/update?idPublishingcompany=${publishingcompany.idPublishingcompany}"/>"></a>
+                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/admin/updatepc?idPublishingcompany=${publishingcompany.idPublishingcompany}"/>"></a>
                                                 
-                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/delete?idPublishingcompany=${publishingcompany.idPublishingcompany}"/>" ></a> 
+                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/admin/deletepc?idPublishingcompany=${publishingcompany.idPublishingcompany}"/>" ></a> 
                                         </td>
                                         </tr>
                                     </c:forEach>

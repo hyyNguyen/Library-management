@@ -32,4 +32,21 @@ public class CategoryService {
     public void deleteCategory(int id){
         categoryRepository.delete(id);
     }
+    
+       //EDIT CATEGORY
+    public Category getCategoryId(int id) {
+        Category category = categoryRepository.findOne(id);
+        return  category;
+    }
+    //update category
+         public Category editcategory(Category category){
+        
+        try {
+            category = categoryRepository.save(category);
+        } catch (Exception e) {
+            e.getMessage();
+            return null;
+        }
+        return category;
+    }
 }

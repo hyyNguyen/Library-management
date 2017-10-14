@@ -13,7 +13,7 @@
                     <a>Tables</a>
                 </li>
                 <li class="active">
-                    <strong>Tác Giả</strong>
+                    <strong>Nơi Lưu Trữ</strong>
                 </li>
             </ol>
         </div>
@@ -60,9 +60,9 @@
                                         <td>${storage.idStorage}</td>
                                         <td>${storage.nameStoragel}</td>
                                         <td>
-                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/update?idStorage=${storage.idStorage}"/>"></a>
+                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/admin/updatestorage?idStorage=${storage.idStorage}"/>"></a>
                                                 
-                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/delete?idStorage=${storage.idStorage}"/>" ></a> 
+                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/admin/deletestorage?idStorage=${storage.idStorage}"/>" ></a> 
                                         </td>
                                         </tr>
                                     </c:forEach>

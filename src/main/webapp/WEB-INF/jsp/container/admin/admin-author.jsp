@@ -26,7 +26,7 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Danh Mục Sách </h5>
+                        <h5>Tác Giả </h5>
                     </div>
                     <div class="ibox-content">
                         <div class="row" style="margin-right: 10px">
@@ -60,9 +60,9 @@
                                         <td>${author.idAuthor}</td>
                                         <td>${author.nameAuthor}</td>
                                         <td>
-                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/update?idAuthor=${author.idAuthor}"/>"></a>
+                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/admin/updateauthor?idAuthor=${author.idAuthor}"/>"></a>
                                             
-                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/delete?idAuthor=${author.idAuthor}"/>" ></a> 
+                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/admin/deleteauthor?idAuthor=${author.idAuthor}"/>" ></a> 
                                         </td>
                                         </tr>
                                     </c:forEach>

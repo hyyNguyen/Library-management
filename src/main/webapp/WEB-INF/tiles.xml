@@ -63,7 +63,7 @@
         <put-attribute name="title" value="Thuvien.vn" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-home.jsp" />  
     </definition> 
-    <!--danh muc-->
+    <!--CATEGORY-->
     <definition name="admincategory" extends="base.admin">  
         <put-attribute name="title" value="Danh Muc" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-category.jsp" />  
@@ -72,21 +72,7 @@
         <put-attribute name="title" value="Danh Muc Edit" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-category-add-edit.jsp" />  
     </definition>
-    <!--book-->
-     <definition name="adminbook" extends="base.admin">  
-        <put-attribute name="title" value="BOOK" />  
-        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-book.jsp" />  
-    </definition> 
-    <definition name="adminaddbook" extends="base.admin">  
-        <put-attribute name="title" value="Danh Muc Edit" />  
-        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-book-add-edit.jsp" />  
-    </definition>
-    <!--nhan vien-->
-    <definition name="adminnhanvien" extends="base.admin">  
-        <put-attribute name="title" value="Nhan Vien" />  
-        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-nhanvien.jsp" />  
-    </definition> 
-    <!--tac gia-->
+    <!--AUTHOR-->
     <definition name="adminauthor" extends="base.admin">  
         <put-attribute name="title" value="Tac Gia" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-author.jsp" />  
@@ -95,7 +81,7 @@
         <put-attribute name="title" value="Tac Gia Edit" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-author-add-edit.jsp" />  
     </definition>
-    <!--Nha xuat ban-->
+    <!--PUBLISHINGCOMPANY-->
     <definition name="adminpublishingcompany" extends="base.admin">  
         <put-attribute name="title" value="Nha Xuat Ban" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-publishingcompany.jsp" />  
@@ -105,7 +91,7 @@
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-publishingcompany-add-edit.jsp" />  
     </definition>
     
-    <!--Noi luu tru-->
+    <!--STORAGE-->
     <definition name="adminstorage" extends="base.admin">  
         <put-attribute name="title" value="Noi Luu Tru" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-storage.jsp" />  
@@ -114,6 +100,22 @@
         <put-attribute name="title" value="Noi Luu Tru Edit" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-storage-add-edit.jsp" />  
     </definition>
+    <!--BOOK-->
+     <definition name="adminbook" extends="base.admin">  
+        <put-attribute name="title" value="BOOK" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-book.jsp" />  
+    </definition> 
+    <definition name="adminaddbook" extends="base.admin">  
+        <put-attribute name="title" value="Danh Muc Edit" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-book-add-edit.jsp" />  
+    </definition>
+    
+    <!--nhan vien-->
+    <definition name="adminnhanvien" extends="base.admin">  
+        <put-attribute name="title" value="Nhan Vien" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-nhanvien.jsp" />  
+    </definition> 
+    
     <!--///-->
     <definition name="admincheckout" extends="base.admin">  
         <put-attribute name="title" value="checkout" />  

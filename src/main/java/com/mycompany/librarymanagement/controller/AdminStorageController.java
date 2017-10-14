@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -28,12 +29,7 @@ public class AdminStorageController {
     
     @Autowired
             StorageService storageService;
-    @RequestMapping("/adminstorage")
-    public String showStorage(Model mm){
-        List<Storage> storage = (List<Storage>) storageRepository.findAll();
-        mm.addAttribute("liststorage", storage);
-        return "adminstorage";
-    }
+  
 //    SETUP STORAGE
     @RequestMapping("/addstorage")
     public String showaddStorage(Model mm){
@@ -41,20 +37,55 @@ public class AdminStorageController {
         mm.addAttribute("storage", storage);
         return "adminaddstorage";
     }
-    
-    
+      @RequestMapping("/adminstorage")
+    public String showStorage(Model mm){
+        List<Storage> storage = (List<Storage>) storageRepository.findAll();
+        mm.addAttribute("liststorage", storage);
+        return "adminstorage";
+    }
+    //ADD
     @RequestMapping(value = "/addstorage" , method = RequestMethod.POST)
     public String Addbook(
             Model mm ,
             @ModelAttribute("storage") Storage storage){
         
         try {
-            storageService.addAuthor(storage);
+            storageService.addStorage(storage);
         } catch (Exception e) {
             e.getMessage();
             return "addstorage";
         }
         return "redirect:/admin/adminstorage";
     }
+    //    Edit
+    @RequestMapping(value="/updatestorage", method = RequestMethod.GET)
+    public String updateCategory(
+            @RequestParam(name = "idStorage", required = true) int id, Model mm) {
+        
+        mm.addAttribute("storage", storageService.getStorageId(id));
+        return "adminaddstorage";
+    }
+    
+    @RequestMapping(value="/updatestorage", method = RequestMethod.POST)
+    public String addupdateCategory(
+            Model mm, @ModelAttribute("storage") Storage storage){
+        
+        try {
+            storageService.addStorage(storage);
+        } catch (Exception e) {
+            e.getMessage();
+            return "addstorage";
+        }
+        return "redirect:/admin/adminstorage";
+    }
+    
+    //delete
+       @RequestMapping("/deletestorage")
+    public String deleteStorage(
+            @RequestParam(value="idStorage", required = true)int id){
+        storageService.deleteStorage(id);
+        return "redirect:/admin/adminstorage";
+    }
+    
     
 }

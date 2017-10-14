@@ -15,14 +15,14 @@
             <div class="col-lg-12">
                 <div class="ibox float-e-margins">
                     <div class="ibox-title">
-                        <h5>Thêm Nha Xuat Ban</h5>
+                        <h5>Thêm Nhà Xuất Bản</h5>
                           </div>
                   
-                   <form:form method="POST" commandName="publishingcompany" class="form-horizontal" >
+                   <form:form method="POST" action="updatepc" commandName="publishingcompany" class="form-horizontal" >
                     
                             <div class="ibox-content">
                                   
-                                <div class="form-group"><label class="col-sm-2 control-label">Tên NXB</label>
+                                <div class="form-group"><label class="col-sm-2 control-label">Tên Nhà Xuất Bản</label>
                                      <form:hidden path="idPublishingcompany" />
                                     <div class="col-sm-10">
                                         <form:input type="text" path="namePublishingcompany" required="true" class="form-control"/>

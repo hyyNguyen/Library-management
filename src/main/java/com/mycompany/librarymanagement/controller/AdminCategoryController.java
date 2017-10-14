@@ -29,14 +29,15 @@ public class AdminCategoryController {
     @Autowired
             CategoryRepository categoryRepository;
     
+    
+      //list
     @RequestMapping("/admincategory")
     public String showCategory(Model mm){
         List<Category> category = (List<Category>) categoryRepository.findAll();
         mm.addAttribute("listcategory", category);
         return "admincategory";
     }
-    
-    //SETUP CATEGORY
+     //SETUP  ADD CATEGORY
     
     @RequestMapping("/addcategory")
     public String setupCategory(Model mm){
@@ -44,11 +45,41 @@ public class AdminCategoryController {
         mm.addAttribute("category", category);
         return "adminaddcategory";
     }
-    
     //SAVE CATEGORY
     @RequestMapping(value = "/addcategory" , method = RequestMethod.POST)
-    public String Addbook(
+    public String AddCategory(
             Model mm ,
+            @ModelAttribute("category") Category category){
+        
+        try {
+            categoryService.addCategory(category);
+        } catch (Exception e) {
+            e.getMessage();
+            return "addcategory";
+        }
+        //gia tri tra ve sau khi nhan nu button save
+        return "redirect:/admin/admincategory";
+        //
+        //NHUNG NO TRA VE admin/adminauthor
+    }
+    //delete
+    @RequestMapping("/deletecategory")
+    public String deleteCategory(
+            @RequestParam(value="idCategory", required = true)int id){
+        categoryService.deleteCategory(id);
+        return "redirect:/admin/admincategory";
+    }
+    //Edit
+    @RequestMapping(value="/updatecategory", method = RequestMethod.GET)
+    public String updateCategory(
+            @RequestParam(name = "idCategory", required = true) int id, Model mm) {
+        mm.addAttribute("category", categoryService.getCategoryId(id));
+        return "adminaddcategory";
+    }
+    
+    @RequestMapping(value="/updatecategory", method = RequestMethod.POST)
+    public String addupdateCategory(
+            Model mm, 
             @ModelAttribute("category") Category category){
         
         try {
@@ -59,12 +90,6 @@ public class AdminCategoryController {
         }
         
         return "redirect:/admin/admincategory";
+        
     }
-
-    @RequestMapping("/delete")
-    public String deleteCategory(
-            @RequestParam(value="idCategory", required = true)int id){
-        categoryService.deleteCategory(id);
-        return "redirect:/admin/admincategory";
-    }
-}
+ }

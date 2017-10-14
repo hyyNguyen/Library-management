@@ -13,7 +13,7 @@
                     <a>Tables</a>
                 </li>
                 <li class="active">
-                    <strong>Tác Giả</strong>
+                    <strong>Danh Mục</strong>
                 </li>
             </ol>
         </div>
@@ -60,9 +60,9 @@
                                         <td>${category.idCategory}</td>
                                         <td>${category.nameCategory}</td>
                                         <td>
-                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/update?idCategory=${category.idCategory}"/>"></a>
+                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/admin/updatecategory?idCategory=${category.idCategory}"/>"></a>
                                             
-                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/delete?idCategory=${category.idCategory}"/>" ></a> 
+                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/admin/deletecategory?idCategory=${category.idCategory}"/>" ></a> 
                                         </td>
                                         </tr>
                                     </c:forEach>

@@ -5,7 +5,8 @@
  */
 package com.mycompany.librarymanagement.repository;
 
-import com.mycompany.librarymanagement.entity.Category;
+import com.mycompany.librarymanagement.entity.CartDetail;
+import java.io.Serializable;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author ASUS
  */
 @Repository
-public interface CategoryRepository extends CrudRepository<Category, Integer>{
+public interface CartdetailRepository extends CrudRepository<CartDetail, Integer>{
     
 }

@@ -17,7 +17,7 @@
                             
                     </div>
                     <div class="ibox-content">
-                        <form:form method="post" commandName="listbook" class="form-horizontal">
+                        <form:form method="post" action="update" commandName="listbook" class="form-horizontal">
                             
                             <div class="hr-line-dashed"></div>
                                 

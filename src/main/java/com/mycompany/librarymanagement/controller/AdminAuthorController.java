@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author ASUS
  */
 @Controller
-
+@RequestMapping("/admin")
 public class AdminAuthorController {
     @Autowired
             AuthorRepository authorRepository;
@@ -31,7 +31,7 @@ public class AdminAuthorController {
             AuthorService  authorService;
     
     
-    @RequestMapping( "/admin/adminauthor")
+    @RequestMapping( "/adminauthor")
     public String showAuthor(Model mm){
         List<Author> author = (List<Author>) authorRepository.findAll();
         mm.addAttribute("listauthor", author);
@@ -39,15 +39,15 @@ public class AdminAuthorController {
     }
     
     //SETUP ADD AUTHOR
-    @RequestMapping("/admin/addauthor")
+    @RequestMapping("/addauthor")
     public String setupaddAuthror(Model mm){
         Author author = new Author();
         mm.addAttribute("author", author);
         return "adminaddauthor";
     }
     //ADD AUTHOR
-    @RequestMapping(value = "/admin/addauthor" , method = RequestMethod.POST)
-    public String Addbook(
+    @RequestMapping(value = "/addauthor" , method = RequestMethod.POST)
+    public String AddAuthor(
             Model mm ,
             @ModelAttribute("author") Author author){
         
@@ -61,18 +61,31 @@ public class AdminAuthorController {
     }
     //SETUP EDIT AUTHOR
     
-//    @RequestMapping(value="/update", method = RequestMethod.GET)
-//    public String updateUser(
-//            @RequestParam(name = "idAuthor", required = true) int id, Model mm) {
-//        
-//        mm.addAttribute("author", authorService.getAuthorById(id));
-//        return "redirect:/admin/addauthor";
-//    }
-//    
+    @RequestMapping(value="/updateauthor", method = RequestMethod.GET)
+    public String updateAuthor(
+            @RequestParam(name = "idAuthor", required = true) int id, Model mm) {
+        
+        mm.addAttribute("author", authorService.getAuthorById(id));
+        return "adminaddauthor";
+    }
+    //update
+        @RequestMapping(value="/updateauthor", method = RequestMethod.POST)
+    public String addupdateAuthor(
+         Model mm, @ModelAttribute("author") Author author){
+        
+      try {
+            authorService.addAuthor(author);
+        } catch (Exception e) {
+            e.getMessage();
+            return "addauthor";
+        }
+        return "redirect:/admin/adminauthor";
+        
+    }
     
     
     //DELETE AUTHOR
-    @RequestMapping("/delete" )
+    @RequestMapping("/deleteauthor" )
     public String deleteAuthor(
             @RequestParam(value = "idAuthor",required = true) int id){
         authorService.deleteAuthor(id);

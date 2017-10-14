@@ -18,7 +18,7 @@
                         <h5>Thêm Nơi Lưu Trữ</h5>
                           </div>
                   
-                   <form:form method="POST" commandName="storage" class="form-horizontal" >
+                   <form:form method="POST" action="updatestorage" commandName="storage" class="form-horizontal" >
                     
                             <div class="ibox-content">
                                   
