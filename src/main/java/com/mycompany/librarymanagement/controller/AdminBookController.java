@@ -90,10 +90,10 @@ public class AdminBookController {
         
         return "redirect:/admin/adminbook";
     }
-//    @RequestMapping("/delete" )
-//     public String deletebook(
-//                @RequestParam(value = "idBook",required = true) int id){
-//         bookService.deleteBook(id);
-//          return "redirect:/admin/adminbook";
-//     }
+    @RequestMapping("/deletebook" )
+     public String deletebook(
+                @RequestParam(value = "idBook",required = true) int id){
+         bookService.deleteBook(id);
+          return "redirect:/admin/adminbook";
+     }
 }

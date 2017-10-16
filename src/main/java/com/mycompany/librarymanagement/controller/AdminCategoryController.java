@@ -57,10 +57,8 @@ public class AdminCategoryController {
             e.getMessage();
             return "addcategory";
         }
-        //gia tri tra ve sau khi nhan nu button save
         return "redirect:/admin/admincategory";
-        //
-        //NHUNG NO TRA VE admin/adminauthor
+        
     }
     //delete
     @RequestMapping("/deletecategory")

@@ -6,6 +6,7 @@
 package com.mycompany.librarymanagement.model;
 
 import com.mycompany.librarymanagement.entity.Book;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  *
  * @author ASUS
  */
-public class CartModel {
+public class CartModel implements  Serializable{
        private int index;
     private List<CartlineModel> cartLines = new ArrayList<CartlineModel>();
     private double totalPrice;

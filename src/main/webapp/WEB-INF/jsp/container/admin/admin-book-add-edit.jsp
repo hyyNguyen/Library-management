@@ -17,7 +17,8 @@
                             
                     </div>
                     <div class="ibox-content">
-                        <form:form method="post" action="update" commandName="listbook" class="form-horizontal">
+                        <c:url value="/admin/addbook" var="action"/>
+                               <form:form method="post"  action="${action}" commandName="listbook" class="form-horizontal">
                             
                             <div class="hr-line-dashed"></div>
                                 
@@ -93,13 +94,11 @@
                                 <label class="col-sm-2 control-label">Hình Ảnh Sách</label>
                                         
                                 <div class="col-sm-10">
-                                    <form:input type="text" path="imageBook" class="form-control"/></div>
+                                    <form:input type="file"  path="imageBook" class="form-control"/></div>
                             </div>
                             <div class="hr-line-dashed"></div>
                                 
-                                
-                            
-                            <button type="submit" class="btn btn-sm btn-primary" style="margin-left: 795px">Save </button> 
+                            <input type="submit" class="btn btn-sm btn-primary" style="margin-left: 795px" value="SAVE">
                         </form:form>
                     </div>
                 </div>

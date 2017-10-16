@@ -38,7 +38,8 @@ public class Cart implements Serializable {
     private Integer idcart;
     @OneToMany(mappedBy = "idCart")
     private Collection<CartDetail> cartDetailCollection;
-    @JoinColumn(name = "idUser", referencedColumnName = "id_user")
+    @JoinColumn(name = "idUser")
+    //, referencedColumnName = "id_user"
     @ManyToOne
     private User idUser;
 

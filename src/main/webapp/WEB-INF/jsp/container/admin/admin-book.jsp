@@ -72,9 +72,9 @@
                                             <td>${book.isbn}</td>
                                             <td>${book.quantity}</td>
                                         <td>
-                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/adminsachedit"/>"></a>
+                                            <a class="fa fa-pencil-square" title="Edit" href="<c:url value="/admin/updatebook?idBook=${book.idBook}"/>" ></a> 
                                             
-                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/admin/delete?idBook=${book.idBook}"/>" ></a> 
+                                            <a class="fa fa-times-circle-o" title="Delete" href="<c:url value="/admin/deletebook?idBook=${book.idBook}"/>" ></a> 
                                         </td>
                                         </tr>
                                     </c:forEach>

@@ -55,6 +55,13 @@ public class BookService {
         }
         return book;
     }
+    
+      public Book getBookById(int id) {
+        Book book = bookRepository.findOne(id);
+        return  book;
+    }
+      
+      
     public void deleteBook(int id){
         bookRepository.delete(id);
     }

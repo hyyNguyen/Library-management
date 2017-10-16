@@ -10,39 +10,40 @@
             <c:url value="/order" var="action_order"/>
             <div class="col-xs-12 col-sm-12 col-md-12 cart" style="margin-top: 20px">
                 <form:form id="cartform" method="POST"  commandName="cartList" action="${action_order}">
-                    <table>
+                    <table width="100%">
                         <thead>
                             <tr>
                             <th>ID Sách</th>
                             <th>Bìa Sách</th>
                             <th>Tên Sách</th>
                             <th>Số Lượng</th>
-                            <th>Ngày Trả</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
                             <c:forEach items="${cartList.cartLines}" var="cart" varStatus="status">
                                 <c:url value="/updateCart" var="action_form_update"/>
-                                <input name="idsach" type="hidden" value="${cart.sach.idsach}"/>
+                                <input name="idBook" type="hidden" value="${cart.book.idBook}"/>
                                 <tr>
-                                <td>${cart.sach.idsach}</td>
-                                
-                                <td><img src="${cart.sach.hinhanhsach}" class="img-responsive center-block" ></td>
-                                <td data-toggle="tooltip" title="Trên Đường bay ">${cart.sach.tensach}</td>
+                                <td>${cart.book.idBook}</td>
+                                    
+                                <td><img src="${cart.book.imageBook}" class="img-responsive center-block" ></td>
+                                <td data-toggle="tooltip" >${cart.book.nameBook}</td>
                                 <td>${cart.quantity}</td>
                                 </tr>
                             </c:forEach>
+                                
                         </tbody>
                     </table>
-                     <c:if test="${not empty sessionScope.userId}">
-               
+                        
+                    <div style="margin: 50px;">
+                        <div style=" float: left;font-size: 20px">Ngày Trả Sách</div>
+                        <input type="date" style="margin-left: 20px; padding: 5px"/>
+                    </div>
+                        
                     <input type="submit" value="Thuê Sách" style="border-radius: 12px; background-color: #4CAF50;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none; font-size: 16px; margin: 14px  ;cursor: pointer;">
-                
-            </c:if>
-            
-                                
-                                
+                        
                 </form:form>
-            </div>  
-        </div>
-</section>
+                    
+            </div>
+            </section>

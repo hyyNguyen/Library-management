@@ -10,8 +10,9 @@ import com.mycompany.librarymanagement.entity.CartDetail;
 import com.mycompany.librarymanagement.model.CartModel;
 import com.mycompany.librarymanagement.repository.CartRepository;
 import com.mycompany.librarymanagement.repository.CartdetailRepository;
-import com.mycompany.librarymanagement.repository.CategoryRepository;
+import com.mycompany.librarymanagement.repository.UserRepository;
 import java.util.Date;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +25,11 @@ public class OrderService {
     @Autowired
             UserService uerService;
     @Autowired
+            UserRepository userRepository;
+    @Autowired
             CartRepository cartRepository;
     @Autowired
-    CartdetailRepository cartdetailRepository;
+            CartdetailRepository cartdetailRepository;
     
     public boolean addOrder(int iduser, CartModel cartInfo){
         
@@ -37,27 +40,21 @@ public class OrderService {
             
             Cart cart = new Cart();
             cart.setIdUser(uerService.findbyID(iduser));
-            //   phieumuon.setIdnguoichomuon(thuthu);
-            
-            cart= cartRepository.save(cart);
+            cart = cartRepository.save(cart);
             
             for(int i = 0 ; i< cartInfoTemp.getCartLines().size();i++){
-                
-                
                 
                 CartDetail cartdetail = new CartDetail();
                 
                 cartdetail.setIdCart(cart);
-//                cartdetail.setIdsach(cartInfoTemp.getCartLines().get(i).getSach());
                 cartdetail.setIdBook(cartInfoTemp.getCartLines().get(i).getBook());
+                
                 // so luong dat
-               
-//                chitietphieumuon.setNgaymuon(new Date());
                 cartdetail.setBorrowingDay(new Date());
-
-
+                cartdetail.setPayDay(cartInfoTemp.getCartLines().get(i).getNgayTra());
+                
                 cartdetailRepository.save(cartdetail);
-                            }
+            }
             
         } catch (Exception e) {
             e.getMessage();
@@ -65,6 +62,5 @@ public class OrderService {
         }
         return true;
     }
-    
     
 }
