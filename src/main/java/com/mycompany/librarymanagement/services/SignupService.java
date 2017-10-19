@@ -10,6 +10,10 @@ import com.mycompany.librarymanagement.repository.UserRepository;
 import com.mycompany.librarymanagement.repository.UserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  *
@@ -23,7 +27,7 @@ public class SignupService {
     UserRoleRepository userRoleRepository;
     
     //add
-     public User addAuthor(User user){
+     public User addUsersignup(User user){
         
         try {
             user = userRepository.save(user);
@@ -33,4 +37,5 @@ public class SignupService {
         }
         return user;
     }
+    
 }
