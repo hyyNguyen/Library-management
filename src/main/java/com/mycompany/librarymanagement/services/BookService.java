@@ -15,8 +15,14 @@ import com.mycompany.librarymanagement.repository.BookRepository;
 import com.mycompany.librarymanagement.repository.CategoryRepository;
 import com.mycompany.librarymanagement.repository.PublishingCompanyRepository;
 import com.mycompany.librarymanagement.repository.StorageRepository;
+import com.mycompany.librarymanagement.util.HibernateUtil;
+import com.mysql.cj.api.Session;
+import java.util.ArrayList;
+import org.hibernate.Query;
+import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 
 /**
  *
@@ -66,5 +72,5 @@ public class BookService {
         bookRepository.delete(id);
     }
     
-    
+  
 }

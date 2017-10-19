@@ -27,7 +27,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-default">Sign in</button>
+                                    <button type="submit" class="btn btn-default">Login</button>
                                 </div> 
                                 <input type="hidden" name="${_csrf.parameterName}"
                                        value="${_csrf.token}" />

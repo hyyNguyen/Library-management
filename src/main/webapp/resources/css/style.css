@@ -453,22 +453,23 @@ Responsive media queries
         text-align: center;
     }
 }
-    .cart > table {
-        border-collapse: collapse;
-        width: 100%;
+.cart > table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-    table, th, td {
-        border: 1px solid black;
+table, th, td {
+    border: 1px solid black;
 }
-    table img{
+table img{
     margin: 5px;
     width: 50%;
 }
-    table th{
+table th{
     text-align:  center;
     padding: 10px;  
 }
-    table td{
+table td{
     text-align: center;
+    vertical-align: middle!important;
 }

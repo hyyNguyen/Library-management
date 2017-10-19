@@ -63,6 +63,10 @@
         <put-attribute name="title" value="Thuvien.vn" />  
         <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-home.jsp" />  
     </definition> 
+  <definition name="adminhomedelete" extends="base.admin">  
+        <put-attribute name="title" value="Thuvien.vn" />  
+        <put-attribute name="body" value="/WEB-INF/jsp/container/admin/admin-home-delete.jsp" />  
+    </definition> 
     <!--CATEGORY-->
     <definition name="admincategory" extends="base.admin">  
         <put-attribute name="title" value="Danh Muc" />  

@@ -1,4 +1,4 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -14,15 +14,16 @@ import org.springframework.format.annotation.DateTimeFormat;
  *
  * @author ASUS
  */
-public class CartlineModel implements Serializable{
-    
+public class CartlineModel implements Serializable {
+
     private Book book;
-     private int quantity;
-    private int NumberCanOrder;
+    private int quantity;
+    private int numberCanOrder;
+    
     @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date NgayMuon;
-    @DateTimeFormat(pattern = "yyyy/MM/dd")
-    private Date NgayTra;
+
+    private String ngayTra;
 
     public CartlineModel() {
     }
@@ -44,11 +45,11 @@ public class CartlineModel implements Serializable{
     }
 
     public int getNumberCanOrder() {
-        return NumberCanOrder;
+        return numberCanOrder;
     }
 
-    public void setNumberCanOrder(int NumberCanOrder) {
-        this.NumberCanOrder = NumberCanOrder;
+    public void setNumberCanOrder(int numberCanOrder) {
+        this.numberCanOrder = numberCanOrder;
     }
 
     public Date getNgayMuon() {
@@ -59,12 +60,12 @@ public class CartlineModel implements Serializable{
         this.NgayMuon = NgayMuon;
     }
 
-    public Date getNgayTra() {
-        return NgayTra;
+    public String getNgayTra() {
+        return ngayTra;
     }
 
-    public void setNgayTra(Date NgayTra) {
-        this.NgayTra = NgayTra;
+    public void setNgayTra(String ngayTra) {
+        this.ngayTra = ngayTra;
     }
-    
+
 }

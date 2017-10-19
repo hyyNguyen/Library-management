@@ -37,22 +37,42 @@
                                     </span>
                                         
                                 </div>
-                                <button type="button" class="btn btn-sm btn-primary"> ++Danh Mục</button> 
+                                    
                                     
                                     
                             </div>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-hover">
-                                <thead>=
+                                <thead>
                                     <tr>
                                     <th>#</th>
-                                    <th>ID Đơn hàng</th>
+                                        
                                     <th>Tên Người Đặt Hàng</th>
+                                    <th>Email</th>
+                                    <th>Tên Sách Thuê</th>
+                                    <th>Số Lượng</th>
+                                    <th>Ngày Thuê</th>
+                                    <th>Ngày Trả</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    
+                                    <c:forEach items="${listcartdetail}" var="cartdetail" varStatus="status">
+                                        <tr>
+                                        <td>${status.index}</td>
+                                        <td>${cartdetail.idCart.idUser.nameUser}</td>
+                                        <td>${cartdetail.idCart.idUser.email}</td>
+                                        <td>${cartdetail.idBook.nameBook}</td>
+                                        <td>${cartdetail.indemnification}</td>
+                                        <td>${cartdetail.borrowingDay}</td>
+                                        <td>${cartdetail.payDay}</td>
+                                        <td>
+                                            <a class="fa fa-check-square-o" title="Duyệt Sách" ></a>
+                                                
+                                            <a class="fa fa-times-circle-o" title="Xóa Đưn Hàng" href="<c:url value="/admin/deletecartdetail?idCartdetail=${cartdetail.idCartdetail}"/>" ></a> 
+                                        </td>
+                                        </tr>
+                                    </c:forEach>
                                 </tbody>
                             </table>
                         </div>

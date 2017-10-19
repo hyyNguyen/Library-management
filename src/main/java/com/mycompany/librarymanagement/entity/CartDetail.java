@@ -42,6 +42,7 @@ public class CartDetail implements Serializable {
     private Date borrowingDay;
     @Column(name = "pay_day")
     @Temporal(TemporalType.DATE)
+    
     private Date payDay;
     @Column(name = "final_pay_day")
     @Temporal(TemporalType.DATE)
